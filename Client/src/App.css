@@ -1,0 +1,30 @@
+html {
+   box-sizing: border-box;
+   font-size: 16px;
+   /* display: flex;
+   justify-content: center;
+   align-items: center; */
+   font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+   margin: 0;
+   padding: 0;
+}
+
+
+body {
+   min-height: 100vh;
+   background-position: center;
+   background-size: cover;
+   background-image: url("./assets/images/espacio.jpg");
+   background-attachment: fixed;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center; 
+   padding: 1em;
+   box-sizing: border-box;    
+}

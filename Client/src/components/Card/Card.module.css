@@ -1,0 +1,241 @@
+.container {
+    min-height: 300px;
+    min-width: 350px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* margin: 0 auto; */
+}
+
+.panel {
+    height: 270px;
+    width: 190px;
+    position: relative;
+
+    &:hover {
+        .card {
+            filter: blur(0.5px);
+        }
+        .slide {
+            bottom: 0px;
+        }
+        .alive:before,
+        .alive:after{
+            transform: translateX(-50%) translateY(-50%) rotate(310deg);
+            box-shadow: 0 0 18px #5ddf4c;
+
+        }
+        .dead:before,
+        .dead:after{
+            transform: translateX(-50%) translateY(-50%) rotate(310deg);
+            box-shadow: 0 0 18px #be0505bd;
+
+        }
+        .unknown:before,
+        .unknown:after {
+            transform: translateX(-50%) translateY(-50%) rotate(310deg);
+            box-shadow: 0 0 18px #2d05bdbd;
+        }
+    }
+}
+
+.alive:hover {
+    box-shadow: 0 0 18px #5ddf4c;
+}
+.dead:hover {
+    box-shadow: 0 0 18px #5ddf4c;
+}
+
+.unknown:hover {
+    box-shadow: 0 0 18px #5ddf4c;
+}
+
+.card,
+.border,
+.slide,
+.line,
+.alive,
+.dead,
+.unknown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: #f0ead6;
+    position: relative;
+    transition: all 0.8s;
+    height: 220px;
+    width: 145px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    border-radius: 1.2rem 0;
+}
+
+.alive,
+.dead,
+.unknown {
+    color: #fffbf1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 170px;
+}
+.alive::after,
+.alive::after,
+.dead::after,
+.dead::after,
+.unknown::after,
+.unknown::after {
+    content: "";
+    padding: 0.7em 0.4em;
+    position: absolute;
+    left: 50%;
+    width: 105%;
+    top: 50%;
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.8s;
+    transform: translateX(-50%) translateY(-50%) rotate(50deg);
+}
+.alive::after,
+.alive::after {
+    border: 2px solid rgba(38, 185, 8, 0.658);
+}
+.dead::after,
+.dead::after {
+    border: 2px solid rgba(173, 10, 10, 0.671);
+}
+.unknown::after,
+.unknown::after { 
+    border: 2px solid rgba(137, 3, 190, 0.733);
+}
+
+p {
+    text-align: center;
+    position: absolute;
+    font-family: "Playfair Display";
+}
+
+.para {
+    bottom: 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Raleway";
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+}
+.alive .para {
+    color: #20ff03;
+}
+.dead .para {
+    color:  #bd0903;
+}
+.unknown .para {
+    color: #b700ff;
+}
+
+.border {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    height: 220px;
+    width: 145px;
+    transition: border 0.8s;
+    overflow: hidden;
+    border-radius: 1.2rem 0;
+}
+
+.slide {
+    height: 220px;
+    width: 145px;
+    position: absolute;
+    border: 1px solid rgb(255, 255, 255);
+    bottom: -270px;
+    background: rgba(45, 95, 64, 0.5);
+    transition: bottom 0.8s;
+    flex-direction: column;
+}
+
+.fa-plane {
+    font-size: 16px;
+}
+.portal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    max-width: 50vw;
+}
+
+.portal img {
+    height: 300px;
+}
+¨ .close_like {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+}
+
+.like {
+    background-color: #f80000a8;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffffff00;
+    width: 25px;
+    height: 25px;
+    border-radius: 50% 0;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.close {
+    background-color: #ffffff00;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50% 0;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.enlace {
+    font-size: 0.8rem;
+    color: #ffff;
+}
+a {
+    text-decoration: none;
+    z-index: 300;
+    cursor: pointer;
+}
+
+.alive  .line {
+    background-color: rgba(55, 197, 11, 0.658);
+    padding: 5px;
+    border-radius: 5px 0;
+}
+.dead  .line {
+    background-color: rgba(197, 11, 11, 0.658);
+    padding: 5px;
+    border-radius: 5px 0;
+}
+.unknown  .line {
+    background-color: rgba(144, 11, 197, 0.658);
+    padding: 5px;
+    border-radius: 5px 0;
+}
+
+/* .link_details > p {
+} */

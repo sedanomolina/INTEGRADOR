@@ -1,0 +1,19 @@
+.container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    padding: 1em;
+    box-sizing: border-box;  
+}
+
+.container__inputs {
+    
+    position: absolute;
+    top: 8vh;
+    border-radius: 10px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,700;1,300;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,600&family=Raleway:wght@100;200;300;400;500&family=Roboto:ital,wght@0,400;1,100;1,300;1,400&display=swap");
+
+@keyframes heartbeat {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.container__hr {
+    width: 100%; /* Ajusta el ancho del contenedor */
+    overflow: hidden;
+}
+
+.heartbeat {
+    height: 2px; /* Ajusta el grosor de la línea */
+    background-color: rgb(255, 251, 0); /* Ajusta el color de la línea */
+    animation: heartbeat 5s infinite; /* Ajusta la duración de la animación */
+}
+
+@media (min-width: 801px) {
+    .contentDiv {
+        background: #2f0b9491;
+        background-position: center;
+    }
+}
+
+.container__cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4em;
+
+    /* gap: 1em; */
+}
+
+.contentDiv,
+.profesor {
+    animation: moveUpDown 3s ease-in-out infinite;
+    width: 45%;
+    height: fit-content;
+    min-height: 60vh;
+    padding: 5vmin;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1em;
+    border-radius: 1em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 20px 5px rgba(31, 66, 224, 0.8);
+}
+
+.contentDiv h3 {
+    font-weight: 400;
+    font-size: 5vmin;
+    color: rgb(235, 231, 13);
+    text-align: left;
+}
+.contentDiv ul {
+    font-size: 1.2rem;
+    font-weight: 200;
+    text-indent: 1em;
+}
+
+.profesor {
+    width: 22%;
+    background: url("../../assets/images/profesor.png");
+    background-position: center;
+    background-size: cover;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.contentDiv h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contentDiv p {
+    margin-bottom: 10px;
+}
+/* } */
+
+@media (max-width: 800px) {
+    .profesor {
+        display: none;
+    }
+    .contentDiv {
+        background-image: url("../../assets/images/profesor.png");
+        background-position: center;
+        background-size: cover;
+        /* margin-top: 4em; */
+        min-width: fit-content;
+    }
+    .contentDiv ul {
+        font-size: 1rem;
+        font-weight: 200;
+        color: #ffffff;
+    }
+    .contentDiv::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Valor de opacidad entre 0 y 1 */
+        z-index: -1;
+        border-radius: 1em;
+    }
+}
