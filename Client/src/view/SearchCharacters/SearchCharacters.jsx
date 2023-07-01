@@ -7,13 +7,13 @@ import { useDispatch, useSelector } from "react-redux";
 export default function SearchCharacters() {
 
     const dispatch = useDispatch();
-    const { allCharacters } = useSelector(state => state)
+    const allCharacters = useSelector(state => state.allCharacters)
 
-    // ------------------------LOCAL STORAE---------------
+    // ------------------------LOCAL STORAGE---------------
     // useEffect(() => {
     //     const storedCharacters = localStorage.getItem("characters");
     //     if (storedCharacters) {
-    //         // const localStorageCharacters = JSON.parse(storedCharacters)
+    //         const localStorageCharacters = JSON.parse(storedCharacters)
     //         dispatch(getLocalStorageCharacters(JSON.parse(storedCharacters)));
     //     }
     // }, []);

@@ -11,7 +11,7 @@ const Favorites = () => {
     const [aux, setAux] = useState(false)
 
     const dispatch = useDispatch()
-    const { myFavorites } = useSelector(state => state)
+    const myFavorites = useSelector(state => state.myFavorites)
 
     const handleOrder = (event) => {
         dispatch(orderCards(event.target.value));
@@ -52,6 +52,5 @@ export default Favorites;
 
 // const mapStateToProps = (state) => ({
 //     myFavorites: state.myFavorites
-// })
 
 // export default connect(mapStateToProps, null)(Favorites)

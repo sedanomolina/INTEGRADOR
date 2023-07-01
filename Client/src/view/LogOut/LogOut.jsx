@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import styles from './LogOut.module.css'
@@ -9,7 +9,7 @@ export default function LogOut() {
     const register = {
         email: '',
         password: ''
-    }
+    };
 
     const [userData, setUserData] = useState(register);
     const [errors, setErrors] = useState({});
@@ -18,26 +18,35 @@ export default function LogOut() {
     const navigate = useNavigate();
     const [access, setAccess] = useState(false);
 
-    const EMAIL = 'luar.01@hotmail.com';
-    const PASSWORD = 'unaPass777';
+    async function login(userData) {
+        const { password, email } = userData;
+        const URL = 'http://localhost:3001/rickandmorty/login/';
 
-    function login(userData) {
-        if (userData.password === PASSWORD && userData.email === EMAIL) {
-            setAccess(true);
-            navigate('/home');
-        }
+        try {
+            const { data } = await axios(URL + `?email=${email}&password=${password}`);
+            const { access } = data;
+            
+            setAccess(access);
+            access
+                ? navigate('/home')
+                : window.alert('ups: no es la pass ;)')
+
+        } catch (error) {
+            window.alert('ups: ' + error.message)//aquí no llega nada!
+        };
     };
+
     useEffect(() => {
         !access && navigate('/');
     }, [access]);
 
     const handleSubmit = event => {
-        event.preventDefault()
-        login(userData)
-    }
+        event.preventDefault();
+        login(userData);
+    };
 
     const handleChange = event => {
-        const { name, value } = event.target
+        const { name, value } = event.target;
         const updatedInputs = { ...userData, [name]: value };
         const updatedErrors = validate(updatedInputs);
         setUserData(updatedInputs);
@@ -48,8 +57,8 @@ export default function LogOut() {
 
         const { name } = event.target;
         if (errors[name]) {
-            setUserData(register)
-            setErrors({})
+            setUserData(register);
+            setErrors({});
 
         }
 
