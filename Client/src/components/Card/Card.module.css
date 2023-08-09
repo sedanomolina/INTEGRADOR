@@ -22,19 +22,19 @@
         .alive:before,
         .alive:after{
             transform: translateX(-50%) translateY(-50%) rotate(310deg);
-            box-shadow: 0 0 18px #5ddf4c;
+            box-shadow: 0 0 300px #5ddf4c;
 
         }
         .dead:before,
         .dead:after{
             transform: translateX(-50%) translateY(-50%) rotate(310deg);
-            box-shadow: 0 0 18px #be0505bd;
+            box-shadow: 0 0 300px #be0505bd;
 
         }
         .unknown:before,
         .unknown:after {
             transform: translateX(-50%) translateY(-50%) rotate(310deg);
-            box-shadow: 0 0 18px #2d05bdbd;
+            box-shadow: 0 0 300px #2d05bdbd;
         }
     }
 }
@@ -43,11 +43,11 @@
     box-shadow: 0 0 18px #5ddf4c;
 }
 .dead:hover {
-    box-shadow: 0 0 18px #5ddf4c;
+    box-shadow: 0 0 18px #be0505bd;
 }
 
 .unknown:hover {
-    box-shadow: 0 0 18px #5ddf4c;
+    box-shadow: 0 0 18px #2d05bdbd;
 }
 
 .card,
@@ -81,6 +81,8 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     font-size: 170px;
+    border-radius: 1.2rem 0;
+
 }
 .alive::after,
 .alive::after,
@@ -98,18 +100,16 @@
     border-radius: 50%;
     transition: transform 0.8s;
     transform: translateX(-50%) translateY(-50%) rotate(50deg);
+    
 }
-.alive::after,
 .alive::after {
-    border: 2px solid rgba(38, 185, 8, 0.658);
+    border: 1px solid rgba(38, 185, 8, 0.658);
 }
-.dead::after,
 .dead::after {
-    border: 2px solid rgba(173, 10, 10, 0.671);
+    border: 1px solid rgba(173, 10, 10, 0.671);
 }
-.unknown::after,
 .unknown::after { 
-    border: 2px solid rgba(137, 3, 190, 0.733);
+    border: 1px solid rgba(137, 3, 190, 0.733);
 }
 
 p {
@@ -131,10 +131,10 @@ p {
     color: #20ff03;
 }
 .dead .para {
-    color:  #bd0903;
+    color:  #8f0803;
 }
 .unknown .para {
-    color: #b700ff;
+    color: #47059e;
 }
 
 .border {
@@ -156,6 +156,8 @@ p {
     background: rgba(45, 95, 64, 0.5);
     transition: bottom 0.8s;
     flex-direction: column;
+    border-radius: 1.2rem 0;
+
 }
 
 .fa-plane {
