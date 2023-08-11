@@ -1,16 +1,9 @@
 .container {
     min-height: 300px;
-    min-width: 350px;
+    min-width: 380px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* margin: 0 auto; */
-}
-
-.panel {
-    height: 270px;
-    width: 190px;
-    position: relative;
 
     &:hover {
         .card {
@@ -20,16 +13,14 @@
             bottom: 0px;
         }
         .alive:before,
-        .alive:after{
+        .alive:after {
             transform: translateX(-50%) translateY(-50%) rotate(310deg);
             box-shadow: 0 0 300px #5ddf4c;
-
         }
         .dead:before,
-        .dead:after{
+        .dead:after {
             transform: translateX(-50%) translateY(-50%) rotate(310deg);
             box-shadow: 0 0 300px #be0505bd;
-
         }
         .unknown:before,
         .unknown:after {
@@ -37,6 +28,36 @@
             box-shadow: 0 0 300px #2d05bdbd;
         }
     }
+}
+
+.panel {
+    height: 270px;
+    width: 190px;
+    position: relative;
+
+    /* &:hover {
+        .card {
+            filter: blur(0.5px);
+        }
+        .slide {
+            bottom: 0px;
+        }
+        .alive:before,
+        .alive:after {
+            transform: translateX(-50%) translateY(-50%) rotate(310deg);
+            box-shadow: 0 0 300px #5ddf4c;
+        }
+        .dead:before,
+        .dead:after {
+            transform: translateX(-50%) translateY(-50%) rotate(310deg);
+            box-shadow: 0 0 300px #be0505bd;
+        }
+        .unknown:before,
+        .unknown:after {
+            transform: translateX(-50%) translateY(-50%) rotate(310deg);
+            box-shadow: 0 0 300px #2d05bdbd;
+        }
+    } */
 }
 
 .alive:hover {
@@ -82,7 +103,7 @@
     transform: translateX(-50%) translateY(-50%);
     font-size: 170px;
     border-radius: 1.2rem 0;
-
+    transform-origin: center; /* Punto de origen en el centro */
 }
 .alive::after,
 .alive::after,
@@ -100,7 +121,6 @@
     border-radius: 50%;
     transition: transform 0.8s;
     transform: translateX(-50%) translateY(-50%) rotate(50deg);
-    
 }
 .alive::after {
     border: 1px solid rgba(38, 185, 8, 0.658);
@@ -108,7 +128,7 @@
 .dead::after {
     border: 1px solid rgba(173, 10, 10, 0.671);
 }
-.unknown::after { 
+.unknown::after {
     border: 1px solid rgba(137, 3, 190, 0.733);
 }
 
@@ -131,7 +151,7 @@ p {
     color: #20ff03;
 }
 .dead .para {
-    color:  #8f0803;
+    color: #8f0803;
 }
 .unknown .para {
     color: #47059e;
@@ -157,7 +177,6 @@ p {
     transition: bottom 0.8s;
     flex-direction: column;
     border-radius: 1.2rem 0;
-
 }
 
 .fa-plane {
@@ -223,17 +242,17 @@ a {
     cursor: pointer;
 }
 
-.alive  .line {
+.alive .line {
     background-color: rgba(55, 197, 11, 0.658);
     padding: 5px;
     border-radius: 5px 0;
 }
-.dead  .line {
+.dead .line {
     background-color: rgba(197, 11, 11, 0.658);
     padding: 5px;
     border-radius: 5px 0;
 }
-.unknown  .line {
+.unknown .line {
     background-color: rgba(144, 11, 197, 0.658);
     padding: 5px;
     border-radius: 5px 0;
